@@ -8,8 +8,8 @@ public enum HxPushUrl: Equatable, CustomStringConvertible {
 
   public var description: String {
     switch self {
-    case .false: "false"
-    case .url(let raw): raw
+    case .false: return "false"
+    case .url(let raw): return raw
     }
   }
 }
