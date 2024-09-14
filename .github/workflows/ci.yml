@@ -5,6 +5,7 @@ on:
     branches:
     - main
     paths:
+    - '**.yml'
     - '**.swift'
   pull_request:
   workflow_dispatch:
