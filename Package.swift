@@ -16,6 +16,13 @@ let package = Package(
       dependencies: [
         .product(name: "HTTPTypes", package: "swift-http-types")
       ]
-    )
+    ),
+    .testTarget(
+      name: "HTTPTypesHtmxTests",
+      dependencies: [
+        "HTTPTypesHtmx",
+        .product(name: "HTTPTypes", package: "swift-http-types"),
+      ]
+    ),
   ]
 )
