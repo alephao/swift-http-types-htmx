@@ -12,7 +12,7 @@ extension Response {
     ]
     headers.append(contentsOf: extraHeaders)
     return .init(
-      status: .accepted,
+      status: .ok,
       headers: headers,
       body: .init(byteBuffer: .init(string: htmlString))
     )

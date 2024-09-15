@@ -48,7 +48,9 @@ requestHeaders.hxTarget  // "myDiv"
 
 ## Examples
 
-Check the [hummingbird](http://github.com/hummingbird-project/hummingbird) example project [here](Examples)
+There is an [example project](Examples) of a server using the [Hummingbird Framework](http://github.com/hummingbird-project/hummingbird) with a few exampels on how to use HTMX response headers to drive the application.
+
+There are also tests for all handlers, demonstrating how this library can be used to mock HTMX requests for testing purposes.
 
 ## Installation
 

@@ -1,3 +1,4 @@
+import Dependencies
 import Foundation
 import HTTPTypesHtmx
 import Hummingbird
@@ -11,7 +12,8 @@ extension Route {
 }
 
 @Sendable func hxReswapHandler(_ req: Request) -> Response {
-  let timestamp = String(Date.now.timeIntervalSince1970)
+  @Dependency(\.date) var date
+  let timestamp = String(date().timeIntervalSince1970)
   let inputId = "timestamp"
   let inputSelector = "#timestamp"
   let input = """
