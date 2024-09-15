@@ -1,6 +1,8 @@
 # swift-http-types-htmx
 [![CI](https://github.com/alephao/swift-http-types-htmx/actions/workflows/ci.yml/badge.svg)](https://github.com/alephao/swift-http-types-htmx/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/alephao/swift-http-types-htmx/graph/badge.svg?token=Ef5FszDA3Y)](https://codecov.io/gh/alephao/swift-http-types-htmx)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Falephao%2Fswift-http-types-htmx%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/alephao/swift-http-types-htmx)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Falephao%2Fswift-http-types-htmx%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/alephao/swift-http-types-htmx)
 
 This package extends [`apple/swift-http-types`](https://github.com/apple/swift-http-types) to support [HTMX](https://htmx.org) request and response headers.
 
