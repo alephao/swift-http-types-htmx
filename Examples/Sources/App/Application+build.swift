@@ -56,5 +56,7 @@ func buildRouter() -> Router<AppRequestContext> {
   router.on(route: .hxLocationB, use: hxLocationBHandler)
   router.on(route: .hxLocationBSubmit, use: hxLocationBSubmitHandler)
   router.on(route: .hxReswapHttp, use: hxReswapHandler)
+  router.on(route: .hxTrigger, use: hxTriggerHandler)
+  router.on(route: .hxTriggerAlert, use: hxTriggerAlertHandler)
   return router
 }

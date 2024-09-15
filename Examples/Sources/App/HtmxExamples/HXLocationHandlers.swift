@@ -32,15 +32,15 @@ extension Route {
 }
 
 @Sendable func hxLocationSubmitHandler(_ req: Request) -> Response {
-  if req.isHtmxRequest {
-    return Response(
-      status: .ok,
-      headers: HTTPFields([
-        .hxLocation(Route.hxLocationB.path)
-      ])
-    )
+  guard req.isHtmxRequest else {
+    return Response(status: .badRequest)
   }
-  return Response(status: .badRequest)
+  return Response(
+    status: .ok,
+    headers: HTTPFields([
+      .hxLocation(Route.hxLocationB.path)
+    ])
+  )
 }
 
 @Sendable func hxLocationBHandler(_ req: Request) -> Response {

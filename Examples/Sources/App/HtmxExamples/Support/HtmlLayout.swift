@@ -16,6 +16,7 @@ func htmlLayout(_ content: String) -> String {
           <ul>
             <li><a href="\(Route.hxLocation.path)">HX-Location</a></li>
             <li><a href="\(Route.hxReswapHttp.path)">HX-Reswap</a></li>
+            <li><a href="\(Route.hxTrigger.path)">HX-Trigger</a></li>
           </ul>
         </nav>
       </header>
