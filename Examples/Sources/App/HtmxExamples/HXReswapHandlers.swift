@@ -7,14 +7,10 @@ import Hummingbird
 #endif
 
 extension Route {
-  static let swapHttp = Route(.get, "/examples/swap-http")
+  static let hxReswapHttp = Route(.get, "/examples/hx-reswap")
 }
 
-func registerSwapRoutes(router: Router<AppRequestContext>) {
-  router.on(route: .swapHttp, use: swapHttpHandler)
-}
-
-@Sendable func swapHttpHandler(_ req: Request) -> Response {
+@Sendable func hxReswapHandler(_ req: Request) -> Response {
   let timestamp = String(Date.now.timeIntervalSince1970)
   let inputId = "timestamp"
   let inputSelector = "#timestamp"
@@ -36,13 +32,13 @@ func registerSwapRoutes(router: Router<AppRequestContext>) {
     htmlLayout(
       """
       <div>
-        <h2>Swap via HX-Reswap and HX-Retarget headers</h2>
+        <h2>HX-Reswap Example</h2>
         <p>This example uses HX-Reswap and HX-Retarget headers to update the input with the server's current timestamp</p>
         <div>
           <button
-            hx-get="\(Route.swapHttp.path)"
+            hx-get="\(Route.hxReswapHttp.path)"
             hx-swap="none"
-          >Swap via HX-Reswap and Hx-Retarget</button>
+          >Swap via HX-Reswap and HX-Retarget</button>
           <br>
           <br>
           \(input)

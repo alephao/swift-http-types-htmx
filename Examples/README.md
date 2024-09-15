@@ -6,4 +6,5 @@ This project provides examples of `swift-htmx` usage
 
 Start the server by running `swift run App` in the project root
 
-- (swap-http)[Sources/App/HtmxExamples/SwapHandlers.swift] - Swap an element via `HX-Retarget` and `HX-Reswap` headers (using "`HTTPTypesHtmx` for `apple/swift-http-types`)
+- (HX-Location)[Sources/App/HtmxExamples/HXLocationHandlers.swift] - Do a client side redirect via `HX-Location`
+- (HX-Reswap)[Sources/App/HtmxExamples/HXReswapHandlers.swift] - Swap an element via `HX-Reswap`

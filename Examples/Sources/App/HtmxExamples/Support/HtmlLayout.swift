@@ -12,8 +12,11 @@ func htmlLayout(_ content: String) -> String {
     </head>
     <body>
       <header class="container">
-        <nav style="display: flex;align-items: center;height: 64px;gap: 16px;">
-          <a href="\(Route.swapHttp.path)">swap via http headers</a>
+        <nav>
+          <ul>
+            <li><a href="\(Route.hxLocation.path)">HX-Location</a></li>
+            <li><a href="\(Route.hxReswapHttp.path)">HX-Reswap</a></li>
+          </ul>
         </nav>
       </header>
       <main class="container">

@@ -51,6 +51,10 @@ func buildRouter() -> Router<AppRequestContext> {
   router.get("/") { _, _ -> Response in
     return .html(htmlLayout("<p>Select an example</p>"))
   }
-  registerSwapRoutes(router: router)
+  router.on(route: .hxLocation, use: hxLocationHandler)
+  router.on(route: .hxLocationSubmit, use: hxLocationSubmitHandler)
+  router.on(route: .hxLocationB, use: hxLocationBHandler)
+  router.on(route: .hxLocationBSubmit, use: hxLocationBSubmitHandler)
+  router.on(route: .hxReswapHttp, use: hxReswapHandler)
   return router
 }
