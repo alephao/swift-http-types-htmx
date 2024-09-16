@@ -58,7 +58,7 @@ Add the dependency to Package.swift
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/alephao/swift-http-types-htmx.git", from: "0.2.0")
+  .package(url: "https://github.com/alephao/swift-http-types-htmx.git", from: "0.3.0")
 ],
 ```
 
