@@ -223,13 +223,7 @@ extension HTTPFields {
   ///
   /// [https://htmx.org/headers/hx-push-url/](https://htmx.org/headers/hx-push-url/)
   public var hxPushUrl: HxPushUrl? {
-    guard let value = self[.hxPushUrl] else {
-      return nil
-    }
-    switch value {
-    case "false": return .false
-    default: return .url(value)
-    }
+    self[.hxPushUrl].map(HxPushUrl.init(_:))
   }
 
   /// Returns the value of an HX-Redirect response header
@@ -256,13 +250,7 @@ extension HTTPFields {
   ///
   /// [https://htmx.org/headers/hx-replace-url/](https://htmx.org/headers/hx-replace-url/)
   public var hxReplaceUrl: HxReplaceUrl? {
-    guard let value = self[.hxReplaceUrl] else {
-      return nil
-    }
-    switch value {
-    case "false": return .false
-    default: return .url(value)
-    }
+    self[.hxReplaceUrl].map(HxReplaceUrl.init(_:))
   }
 
   /// Returns the value of an HX-Reswap response header
@@ -271,7 +259,7 @@ extension HTTPFields {
   ///
   /// [https://htmx.org/reference/#response_headers](https://htmx.org/reference/#response_headers)
   public var hxReswap: HxSwap? {
-    return self[.hxReswap].flatMap(HxSwap.init(rawValue:))
+    return self[.hxReswap].map(HxSwap.init(_:))
   }
 
   /// Returns the value of an HX-Retarget response header

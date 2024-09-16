@@ -36,7 +36,7 @@ final class ResponseHeadersTests: XCTestCase {
     XCTAssertEqual(HTTPField.hxReswap(.delete).description, "HX-Reswap: delete")
     XCTAssertEqual(HTTPField.hxReswap(.none).description, "HX-Reswap: none")
     XCTAssertEqual(
-      HTTPField.hxReswap(.raw("raw this can be anything")).description,
+      HTTPField.hxReswap("raw this can be anything").description,
       "HX-Reswap: raw this can be anything"
     )
     XCTAssertEqual(HTTPField.hxRetarget("cssSelector").description, "HX-Retarget: cssSelector")
@@ -114,7 +114,7 @@ final class ResponseHeadersTests: XCTestCase {
       (HTTPField.hxReswap(.afterend), .afterend),
       (HTTPField.hxReswap(.delete), .delete),
       (HTTPField.hxReswap(.none), .none),
-      (HTTPField.hxReswap(.raw("any value")), .raw("any value")),
+      (HTTPField.hxReswap("any value"), "any value"),
     ]
     for (header, value) in headersHxReswap {
       XCTAssertEqual(HTTPFields([header]).hxReswap, value)

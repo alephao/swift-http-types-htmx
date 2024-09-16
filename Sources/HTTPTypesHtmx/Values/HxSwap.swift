@@ -1,63 +1,40 @@
 /// Possible values for HX-Reswap header
 ///
 /// [https://htmx.org/attributes/hx-swap/](https://htmx.org/attributes/hx-swap/)
-public enum HxSwap: RawRepresentable, Equatable, CustomStringConvertible {
-  public typealias RawValue = String
+public struct HxSwap: Equatable, CustomStringConvertible, ExpressibleByStringLiteral {
+  public let description: String
 
+  public init(_ description: String) {
+    self.description = description
+  }
+
+  public init(stringLiteral value: StringLiteralType) {
+    self.description = value
+  }
+}
+
+extension HxSwap {
   /// Replace the inner html of the target element
-  case innerHTML
+  public static let innerHTML = HxSwap("innerHTML")
 
   /// Replace the entire target element with the response
-  case outerHTML
+  public static let outerHTML = HxSwap("outerHTML")
 
   /// Insert the response before the target element
-  case beforebegin
+  public static let beforebegin = HxSwap("beforebegin")
 
   /// Insert the response before the first child of the target element
-  case afterbegin
+  public static let afterbegin = HxSwap("afterbegin")
 
   /// Insert the response after the last child of the target element
-  case beforeend
+  public static let beforeend = HxSwap("beforeend")
 
   /// Insert the response after the target element
-  case afterend
+  public static let afterend = HxSwap("afterend")
 
   /// Deletes the target element regardless of the response
-  case delete
+  public static let delete = HxSwap("delete")
 
   /// Does not append content from response (out of band items will still be processed).
-  case none
-
-  /// Fallback if you need a value other than the ones avaiable
-  case raw(String)
-
-  public var rawValue: String {
-    switch self {
-    case .innerHTML: return "innerHTML"
-    case .outerHTML: return "outerHTML"
-    case .beforebegin: return "beforebegin"
-    case .afterbegin: return "afterbegin"
-    case .beforeend: return "beforeend"
-    case .afterend: return "afterend"
-    case .delete: return "delete"
-    case .none: return "none"
-    case .raw(let string): return string
-    }
-  }
-
-  public var description: String { rawValue }
-
-  public init(rawValue: String) {
-    switch rawValue {
-    case "innerHTML": self = .innerHTML
-    case "outerHTML": self = .outerHTML
-    case "beforebegin": self = .beforebegin
-    case "afterbegin": self = .afterbegin
-    case "beforeend": self = .beforeend
-    case "afterend": self = .afterend
-    case "delete": self = .delete
-    case "none": self = .none
-    default: self = .raw(rawValue)
-    }
-  }
+  public static let none = HxSwap("none")
 }
