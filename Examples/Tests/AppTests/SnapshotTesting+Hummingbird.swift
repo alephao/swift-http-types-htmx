@@ -1,9 +1,6 @@
 import Hummingbird
 import HummingbirdTesting
-//import Logging
-//import XCTest
 import SnapshotTesting
-//import InlineSnapshotTesting
 
 extension Snapshotting where Value == TestResponse, Format == String {
   public static let http: Snapshotting = Snapshotting<TestResponse, String>
